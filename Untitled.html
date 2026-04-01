@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-areas: 
+            "header header"
+            "nav nav"
+            "aside main"
+            "footer footer";
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 90px 40px 1fr 50px;
+            height:100vh;
+        }
+
+        header{
+            grid-area:header;
+            background-color:blueviolet;
+            text-align:center;
+        }
+
+        footer{
+            grid-area:footer;
+            background-color:rgb(169, 120, 215);
+            text-align:center;
+        }
+
+        main{
+            grid-area:main;
+            background-color:rgb(237, 234, 240);
+            text-align:justify;
+            /* font-style:oblique; */
+            font-family:'Times New Roman', Times, serif;
+            padding:10px;
+        }
+
+        nav{
+            grid-area:nav;
+            background-color:rgb(99, 54, 145);
+        }
+
+        nav ul{
+            list-style-type:none;
+            display:flex;
+            justify-content: center;            
+        }
+
+        nav ul li{
+            margin:0 30px; 
+            /* float:left;           */
+        }
+
+        nav ul li a{
+            text-decoration: none;
+            color:white;
+            font-weight:500;
+        }
+
+        aside{
+            grid-area:aside;
+            background-color:rgb(39, 1, 78);            
+        }
+
+        aside ul{
+            list-style-type:none;                    
+        }
+
+        aside ul li{
+            margin-bottom:20px;
+            color:white;
+            font-variant:small-caps;
+        }
+
+
+        @media (max-width: 768px){
+
+            .container{
+                grid-template-areas: 
+                "header"
+                "nav"
+                "main"
+                "aside"
+                "footer";
+
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+        nav ul{ 
+            flex-direction: column;
+            align-items: center;
+            }
+
+        nav ul li{
+            margin:10px 0;
+            }
+
+        aside ul{
+            text-align:center;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>My Responsive Web Page</h2>
+            <p>Using CSS Grid Layout</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <aside>
+            <ul>
+                <li>Events</li>
+                <li>Updates</li>
+                <li>Advertisement</li>
+                <li>Links</li>
+            </ul>
+        </aside>
+
+        <main>
+            <p>The CSS Grid Layout module is a powerful two-dimensional layout system that allows developers to easily create complex and responsive web designs with rows and columns.</p>
+
+            <h4>Key Concepts</h4>
+<h5>Grid Container:</h5><p>The parent element on which display: grid or display: inline-grid is applied. All direct children become grid items.</p>
+<h5>Grid Item:</h5><p> The direct children of the grid container.</p>
+<h5>Grid Lines:</h5><p> The horizontal and vertical dividing lines that make up the grid's structure. They are numbered starting from 1 and can also be named.</p>
+<h5>Grid Tracks:</h5><p>The space between two adjacent grid lines, essentially the columns and rows of the grid.</p>
+<h5>Grid Cell:</h5><p> The smallest unit of the grid, the space between two adjacent row and two adjacent column lines.</p>
+<h5>Grid Area:</h5><p> A total space surrounded by four grid lines, which may be composed of any number of grid cells.</p>
+<h5>Gaps (Gutters):</h5><p>The spaces between columns and rows, specified using gap, row-gap, and column-gap properties.</p>
+        </main>
+
+        <footer>
+            <p>&copy 2026 My Web Page | All Rights Reserved</p>
+        </footer>
+    </div>
+    
+</body>
+</html>
+grid_responsive.html
+Displaying grid_responsive.html.
